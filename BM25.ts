@@ -46,6 +46,9 @@ export type BMSorter = (firstEl: BMDocument, secondEl: BMDocument) => number;
  *  @param sort: A function that allows you to sort queries by a given rule. If not provided, returns results corresponding to the original order. 
  * If this option is provided, the return type will not be an array of scores but an array of documents with their scores.
  */
+
+export default function BM25(documents: string[], keywords: string[], constants?: BMConstants): number[];
+export default function BM25(documents: string[], keywords: string[], constants: BMConstants | undefined, sorter: BMSorter): BMDocument[];
 export default function BM25(
   documents: string[],
   keywords: string[],
